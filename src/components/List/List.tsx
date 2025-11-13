@@ -1,17 +1,14 @@
 interface Props {
-    personajeNombre: any[];
+    personajeNombre?: any;
 }
 
 export const List = ({ personajeNombre }: Props) => {
     return (
         <div>
-            <ul>
-                {personajeNombre.map((personaje) => (
-                    <li key={personaje.id}>
-                        {personaje.name}
-                    </li>
-                ))}
-            </ul>
+            <h2>{personajeNombre.name}</h2>
+            <img src={personajeNombre.image} alt={personajeNombre.name} />
+            <p>Status: {personajeNombre.status}</p>
+
         </div>
     )
 }
